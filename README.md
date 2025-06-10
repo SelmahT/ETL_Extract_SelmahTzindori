@@ -5,18 +5,18 @@
 **Course:** DSA 2040A - Lab 3 US 2025 (Take-Home Lab: Practicing Extraction in ETL)
 
 ---
-## 📚 Table of Contents
+## Table of Contents
 
-- [📘 Project Overview](#-project-overview)
-- [🔍 What the Notebook Does](#-what-the-notebook-does)
-- [⚙️ Tools & Technologies](#️-tools--technologies)
-- [🧬 Data Description](#-data-description)
-- [🔄 Extraction Methods](#-extraction-methods)
-  - [✅ Full Extraction](#✅-full-extraction)
-  - [🔁 Incremental Extraction](#🔁-incremental-extraction)
-- [🚀 Getting Started](#-getting-started)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
+- [ Project Overview](#-project-overview)
+- [ What the Notebook Does](#-what-the-notebook-does)
+- [ Tools & Technologies](#-tools--technologies)
+- [Data Description](#-data-description)
+- [ Extraction Methods](#-extraction-methods)
+  - [ Full Extraction](#-full-extraction)
+  - [ Incremental Extraction](#-incremental-extraction)
+- [ Getting Started](#-getting-started)
+- [ Contributing](#-contributing)
+- [ License](#-license)
 
 ---
 ## Project Overview
@@ -38,7 +38,7 @@ The Jupyter Notebook contains:
 
 ---
 
-## ⚙️ Tools & Technologies
+##  Tools & Technologies
 
 | Tool           | Purpose                                |
 |----------------|----------------------------------------|
@@ -50,7 +50,7 @@ The Jupyter Notebook contains:
 
 ---
 
-## 🧬 Data Used
+##  Data Used
 
 The dataset consists of **synthetically generated basketball performance records**, containing 200 rows and the following fields:
 
@@ -86,7 +86,7 @@ Note: Since the data only contains dates (no timestamps), the script appends `"0
 ![alt text](images/incremental_extraction_output.PNG)
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 1. **Clone the Repository**  
    ```bash
@@ -106,7 +106,7 @@ Note: Since the data only contains dates (no timestamps), the script appends `"0
   ```
 ---
 
-## 🤝 Contributing
+##  Contributing
 If you'd like to improve this notebook, feel free to:
 
 Fork the repository
@@ -117,7 +117,9 @@ Commit your changes (git commit -m 'Enhance incremental logic')
 
 Push to your fork (git push origin improve-extraction)
 
-Open a Pull Request
+Open a pull request
+
+
 ---
 ## License
 This project is licensed under the MIT License
