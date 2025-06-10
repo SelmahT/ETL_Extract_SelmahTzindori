@@ -83,6 +83,8 @@ Note: Since the data only contains dates (no timestamps), the script appends `"0
 - Compares each record’s `last_updated` date to the timestamp stored in `last_extraction.txt`.
 - Only extracts **new or updated records**.
 - Updates the timestamp in `last_extraction.txt` to reflect the latest data processed.
+- Output can change because it is simulated data,that is randomly generated
+
 ![alt text](images/incremental_extraction_output.PNG)
 ---
 
