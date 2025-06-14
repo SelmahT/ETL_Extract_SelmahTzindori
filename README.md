@@ -62,7 +62,7 @@ Note: Since the data only contains dates (no timestamps), the script appends `"0
 
 - Extracts all data from the CSV file.
 - Used for first-time extraction or when no historical extraction file exists.
-![alt text](<images/full_extraction output.PNG>)
+![alt text](<etl_process_outputs/full_extraction output.PNG>)
 
 ### Incremental Extraction
 
@@ -70,7 +70,7 @@ Note: Since the data only contains dates (no timestamps), the script appends `"0
 - Only extracts **new or updated records**.
 - Updates the timestamp in `last_extraction.txt` to reflect the latest data processed.
 - Output can change because it is simulated data,that is randomly generated
-![alt text](images/incremental_extraction_output.PNG)
+![alt text](etl_process_outputs/incremental_extraction_output.PNG)
 ---
 #  DSA 2040A - Lab 4: Transform in ETL
 
@@ -97,10 +97,10 @@ The ETL pipeline has been extended to include **data transformation**, applied t
    - Converted `match_date` and `last_updated` to standard datetime format
 
 4. **Preview of Transformed Full Dataset**
-![alt text](images/transform_full.PNG)
+![alt text](etl_process_outputs/transform_full.PNG)
 
 5. **Preview of transformed incremental data set**
-![alt text](images/transform_incremental.PNG)
+![alt text](etl_process_outputs/transform_incremental.PNG)
 
 ---
 
