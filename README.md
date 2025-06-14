@@ -1,22 +1,8 @@
-# ETL Extract Lab
+# ETL LABS
 
 **Student Name:** Selmah Tzindori  
 **Student ID:** 669602  
-**Course:** DSA 2040A - Lab 3 US 2025 (Take-Home Lab: Practicing Extraction in ETL)
-
----
-## Table of Contents
-
-- [ Project Overview](#-project-overview)
-- [ What the Notebook Does](#-what-the-notebook-does)
-- [ Tools & Technologies](#-tools--technologies)
-- [Data Description](#-data-description)
-- [ Extraction Methods](#-extraction-methods)
-  - [ Full Extraction](#-full-extraction)
-  - [ Incremental Extraction](#-incremental-extraction)
-- [ Getting Started](#-getting-started)
-- [ Contributing](#-contributing)
-- [ License](#-license)
+**Course:** DSA 2040A (Lab 3_Extraction process in ETL)
 
 ---
 ## Project Overview
@@ -84,9 +70,73 @@ Note: Since the data only contains dates (no timestamps), the script appends `"0
 - Only extracts **new or updated records**.
 - Updates the timestamp in `last_extraction.txt` to reflect the latest data processed.
 - Output can change because it is simulated data,that is randomly generated
-
 ![alt text](images/incremental_extraction_output.PNG)
 ---
+#  DSA 2040A - Lab 4: Transform in ETL
+
+##  Objective  
+To reinforce understanding of data transformation by extending the existing ETL pipeline with transformation logic that prepares extracted data for analysis.
+
+---
+
+## ETL Pipeline Overview
+
+The ETL pipeline has been extended to include **data transformation**, applied to both full and incremental datasets.
+
+### Transformation Steps Applied
+
+1. **Cleaning**
+   - Removed rows with missing values (`NaN`)
+   - Dropped duplicate rows
+
+2. **Enrichment**
+   - Added a new column:  
+     `total_contribution = points_scored + assists + rebounds`
+
+3. **Structural Changes**
+   - Converted `match_date` and `last_updated` to standard datetime format
+
+4. **Preview of Transformed Full Dataset**
+![alt text](images/transform_full.PNG)
+
+5. **Preview of transformed incremental data set**
+![alt text](images/transform_incremental.PNG)
+
+---
+
+##  Output Files
+
+| File Name                    | Description                                      |
+|-----------------------------|--------------------------------------------------|
+| `transformed_full.csv`      | Fully transformed full dataset                   |
+| `transformed_incremental.csv` | Fully transformed incremental dataset           |
+
+---
+
+##  Notebooks
+
+- **`etl_extract.ipynb`**
+  - Section 1: Setup & Imports  
+  - Section 2: Full Extraction  
+  - Section 3: Incremental Extraction  
+
+- **`etl_transform.ipynb`**
+  - Section 4: Transform Full Data  
+  - Section 5: Transform Incremental Data  
+
+Both notebooks are cleanly separated for clarity and modularity.
+
+
+---
+
+## ✅ Submission Notes
+
+- All required files are included in this GitHub repository
+- The project satisfies the requirement of applying **at least 3 transformations**
+- This submission builds upon the previous Lab 3 work
+
+---
+
 
 ##  Getting Started
 
