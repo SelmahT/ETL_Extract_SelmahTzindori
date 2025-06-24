@@ -1,7 +1,7 @@
 # ETL LABS
 
 **Student Name:** Selmah Tzindori  
-**Student ID:** 669602  
+**Student ID:** 602  
 **Course:** DSA 2040A (Lab 3_Extraction process in ETL)
 
 ---
