@@ -137,8 +137,8 @@ Both notebooks are cleanly separated for clarity and modularity.
 
 ---
 
-## DSA 2040A - Lab 5: Load in ETL
-# Objective
+# DSA 2040A - Lab 5: Load in ETL
+## Objective
 - To finalize the ETL process by loading the transformed datasets into structured storage using SQLite databases.
 
 ---
@@ -155,7 +155,7 @@ Both notebooks are cleanly separated for clarity and modularity.
 
 ---
 ## Loading Steps Applied
-1. Full Transformed Data
+### 1. Full Transformed Data
 - Input file: transformed_full.csv
 
 - Target database: loaded_data/full_data.db
@@ -163,7 +163,7 @@ Both notebooks are cleanly separated for clarity and modularity.
 - SQLite table name: full_data
 
 
-# Code used:
+#### Code used:
 ```bash
 df_full = pd.read_csv("transformed_full.csv")
 conn = sqlite3.connect("loaded_data/full_data.db")
@@ -172,14 +172,14 @@ conn.close()
 
 ```
 ---
-2. Incremental Transformed Data
+### 2. Incremental Transformed Data
 - Input file: transformed_incremental.csv
 
 - Target database: loaded_data/incremental_data.db
 
 - SQLite table name: incremental_data
 
-# Code used:
+#### Code used:
 ```bash
 df_incremental = pd.read_csv("transformed_incremental.csv")
 conn = sqlite3.connect("loaded_data/incremental_data.db")
@@ -188,7 +188,7 @@ conn.close()
 ```
 ---
 
-3. Verification
+### 3. Verification
 - A SQL query was run to confirm that the tables were successfully loaded
 ```bash
 conn = sqlite3.connect("loaded_data/full_data.db")
@@ -197,14 +197,14 @@ conn.close()
 print(preview.head())
 
 ```
-## Outputs to show verifiaction of loaded tables
-# Full load output
+### Outputs to show verifiaction of loaded tables
+#### Full load output
 ![alt text](etl_process_outputs/verify_fullload_output.PNG)
-# Incremental load output
+#### Incremental load output
 ![alt text](etl_process_outputs/verify_incrementalload_output.PNG)
 ---
 
-## Output files
+### Output files
 | File Name             | Description                                   |
 | --------------------- | --------------------------------------------- |
 | `full_data.db`        | SQLite DB for full transformed dataset        |
