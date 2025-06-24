@@ -129,7 +129,7 @@ Both notebooks are cleanly separated for clarity and modularity.
 
 ---
 
-## ✅ Submission Notes
+## Submission Notes
 
 - All required files are included in this GitHub repository
 - The project satisfies the requirement of applying **at least 3 transformations**
@@ -137,25 +137,99 @@ Both notebooks are cleanly separated for clarity and modularity.
 
 ---
 
+## DSA 2040A - Lab 5: Load in ETL
+# Objective
+- To finalize the ETL process by loading the transformed datasets into structured storage using SQLite databases.
+
+---
+## ETL Pipeline Overview (Load Phase)
+- The ETL pipeline has now been extended to include the Load stage, where both the transformed full and incremental datasets are stored in a structured format using SQLite
+---
+
+## Loading Method Used
+- SQLite was selected for its simplicity and built-in support in Python.
+
+- Python’s sqlite3 library was used to write Pandas DataFrames directly into database files.
+
+- Each dataset was stored in its own .db file inside a loaded_data/ directory.
+
+---
+## Loading Steps Applied
+1. Full Transformed Data
+- Input file: transformed_full.csv
+
+- Target database: loaded_data/full_data.db
+
+- SQLite table name: full_data
+
+
+# Code used:
+```bash
+df_full = pd.read_csv("transformed_full.csv")
+conn = sqlite3.connect("loaded_data/full_data.db")
+df_full.to_sql("full_data", conn, if_exists="replace", index=False)
+conn.close()
+
+```
+---
+2. Incremental Transformed Data
+- Input file: transformed_incremental.csv
+
+- Target database: loaded_data/incremental_data.db
+
+- SQLite table name: incremental_data
+
+# Code used:
+```bash
+df_incremental = pd.read_csv("transformed_incremental.csv")
+conn = sqlite3.connect("loaded_data/incremental_data.db")
+df_incremental.to_sql("incremental_data", conn, if_exists="replace", index=False)
+conn.close()
+```
+---
+
+3. Verification
+- A SQL query was run to confirm that the tables were successfully loaded
+```bash
+conn = sqlite3.connect("loaded_data/full_data.db")
+preview = pd.read_sql("SELECT * FROM full_data LIMIT 5;", conn)
+conn.close()
+print(preview.head())
+
+```
+## Outputs to show verifiaction of loaded tables
+# Full load output
+![alt text](etl_process_outputs/verify_fullload_output.PNG)
+# Incremental load output
+![alt text](etl_process_outputs/verify_incrementalload_output.PNG)
+---
+
+## Output files
+| File Name             | Description                                   |
+| --------------------- | --------------------------------------------- |
+| `full_data.db`        | SQLite DB for full transformed dataset        |
+| `incremental_data.db` | SQLite DB for incremental transformed dataset |
+
+---
 
 ##  Getting Started
 
 1. **Clone the Repository**  
-   ```bash
+```bash
    git clone https://github.com/SelmahT/ETL_Extract_SelmahTzindori.git
    cd ETL_Extract_SelmahTzindori
-   
+```   
 2. **Install Dependencies**
   - Use pip to install required libraries: 
-   ```bash
-   pip install pandas faker jupyter
-   ```
+```bash
+pip install pandas faker jupyter
+```
 
 3. **Run the Notebook**
  - Launch Jupyter and run the notebook:
-  ```bash
-  jupyter notebook ETL_Extract_Lab.ipynb
-  ```
+```bash
+jupyter notebook ETL_Extract_Lab.ipynb
+```
 ---
 
 ##  Contributing
